@@ -41,9 +41,14 @@ There are 12 columns in the data they are as follows:
 ### Data Preprocessing
 For the initial data preprocessing, we selected one of the excel csv from the dataset downloaded from kaggle, specificially the file named DataJobTX.
 ### Model Target and Features
-Since we are simply sketching the model, we decided to use all the columns in the dataset. The target features for the model will be 'Min_Salary' and 'Max_Salary' columns, while all other columns from the dataset are considered to be the features for the model.
+Since we are simply sketching the model, we decided to use all the columns in the dataset. The target features are the 'Min_Salary' and 'Max_Salary' columns or their average, while all other columns from the dataset are considered to be the features for the model.
 ### Splitting the dataset
 We will split the dataset into training and testing sets using the 80/20 pareto rule resulting in a test size of 20%.
-### Supervised Machine Learning
-Since we are looking to predict a value, there are different models we can use:
-- Linear Reggression
+### Supervised Machine Learning Model
+We will use a supervised machine learning model since we are looking to predict a value. There are different models we can use:
+#### Regression 
+- We could use the average salaries and apply a **Linear Regression** to determine trend of salary growth
+#### Classification
+Because salaries have a good amount of vairation we could use a **Random Forest Regression** to predict max and min salary for the next years.
+### Model Evaluation
+?????
