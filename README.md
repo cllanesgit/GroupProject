@@ -1,5 +1,12 @@
 # Salary Prediction Tool for U.S based Data Science Roles
 ## Project Overview
+
+### Team
+- Cristian Llanes (Square Role)
+- Maria Sevillano (Triangle Role)
+- Alejandra Villarreal (Circle Role)
+- Sharof Abdoollayev (X Role)
+
 ### Objective
 The purpose of this project is to build a resource for job-seekers to predict the salary of a given career field, Data Science, based on a set variables. By doing so, we hope to help potential job-seekers:
 - Answer to the  **"What Are Your Salary Expectations?"** question that a hiring manager might pose during the interview process.
