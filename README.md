@@ -18,17 +18,47 @@ Moreover, this tool could also:
 - Understand salary expectation differences based on different factors including: location, company size, skill set, etc.
 
 ### Data Source
-The data used in our project is collected from Kaggle [link to source]. The Kaggle data itself was developed by scraping job postings related to the position of 'Data Scientist' from Glassdoor.com [link to source].
+The data used in our project is collected from Kaggle [https://www.kaggle.com/datasets/jackogozaly/data-science-and-stem-salaries?resource=download]. The Kaggle data itself, consists of 62,00 salary records from top companies. This data was scraped off levels.fyi.
+This dataset consists of useful information such as education level. compensation (comprised of base salary, bonus, stock grants), race and more. It contains information from the US and other countries. The cleaning process included removing columns that are not necessary for our analysis as well as removing the lines that include data not from the US.
+
+Original data set : Levels_Fyi_Salary_Data.csv
+
+There are 22 columns in the data:
+
+Columns:
+
+- timestamp: datetime when the data was recorded. 
+- company: company. 
+- level: what level the observation is at. 
+- title: Role title. 
+- totalyearlycompensation: total yearly compensation. 
+- location: Job location.
+- yearsofexperience: years of experience.
+- yearsatcompany: years of experience at said company. 
+- basesalary: base salary. 
+- stockgrantvalue: stock grant value. 
+- bonus: Bonus. 
+- rowNumber: row number. 
+- Masters_Degree: boolean 1 for yes, 0 for no. 
+- Bachelors_Degree: boolean 1 for yes, 0 for no. 
+- Doctorate_Degree: boolean 1 for yes, 0 for no. 
+- Highschool: boolean 1 for yes, 0 for no. 
+- Some_College: boolean 1 for yes, 0 for no. 
+- Race_Asian: boolean 1 for yes, 0 for no. 
+- Race_White: boolean 1 for yes, 0 for no. 
+- Race_Two_Or_More: boolean 1 for yes, 0 for no. 
+- Race_Black: boolean 1 for yes, 0 for no. 
+- Race_Hispanic: boolean 1 for yes, 0 for no.
 
 This dataset consists mainly of 4 csv.files:  
-1. **DataJobNY.csv**: New York Job postings
-2. **DataJobSF.csv**: San Francisco Job postings
-3. **DataJobTX.csv**: Texas Job postings
-4. **DataJobWA.csv**: Washington State Job postings
+1. **DataJobNY.csv**: New York Job postings.
+2. **DataJobSF.csv**: San Francisco Job postings.
+3. **DataJobTX.csv**: Texas Job postings.
+4. **DataJobWA.csv**: Washington State Job postings.
 
 There are 12 columns in the data:
-- **Job_title**: The title of the job which you are applying to
-- **Company**: Company name
+- **Job_title**: The title of the job which you are applying to.
+- **Company**: Company name.
 - **State/City**: State/city in which the company's job posting is listed.
 - **Min_Salary**: Minimum yearly salary in USD.
 - **Max_Salary**: Maximum yearly salary in USD.
