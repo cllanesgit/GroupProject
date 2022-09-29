@@ -64,7 +64,7 @@ We will split the dataset into training and testing sets using the 80/20 pareto 
 ### Supervised Machine Learning Model
 We will use a supervised machine learning model since we are looking to predict a value. There are different models we can use:
 #### Regression 
-- We could use the average salaries and apply a **Linear Regression** to determine trend of salary growth
+- We could use the average salaries and apply a **Linear Regression** to determine trend of salary growth.
 #### Classification
 Because salaries have a good amount of vairation we could use a **Random Forest Regression** to predict max and min salary for the next years.
 ### Model Evaluation
