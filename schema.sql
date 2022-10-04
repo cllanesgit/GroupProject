@@ -12,6 +12,7 @@ CREATE TABLE salary_data (
   yearsatcompany FLOAT,
   basesalary INT,
   stockgrantvalue FLOAT,
+  gender TEXT,
   rowNumber INT,
   bonus FLOAT,
   Masters_Degree INT,
@@ -24,6 +25,8 @@ CREATE TABLE salary_data (
   Race_Two_Or_More INT,
   Race_Black INT,
   Race_Hispanic INT,
+  Race TEXT,
+  Education TEXT,
   city TEXT,
   state TEXT
 );
