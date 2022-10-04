@@ -3,7 +3,8 @@
 
 -- Create Salary Data table
 CREATE TABLE salary_data (
-  responseid INT PRIMARY KEY NOT NULL,
+  responseid TEXT PRIMARY KEY NOT NULL,
+  _c0 TEXT,
   timestamp DATE,
   company TEXT,
   level TEXT,
@@ -21,22 +22,24 @@ CREATE TABLE salary_data (
 
 
 CREATE TABLE participants_data (
-  responseid INT PRIMARY KEY NOT NULL,
-  timestamp DATE,
+  responseid TEXT PRIMARY KEY NOT NULL,
+  _c0 TEXT,
+  timestamp TEXT,
   gender TEXT,
   otherdetails TEXT,
-  Masters_Degree INT,
-  Bachelors_Degree INT,
-  Doctorate_Degree INT,
-  Highschool INT,
-  Some_College INT,
-  Race_Asian INT,
-  Race_White INT,
-  Race_Two_Or_More INT,
+  Masters_Degree TEXT,
+  Bachelors_Degree TEXT,
+  Doctorate_Degree TEXT,
+  Highschool TEXT,
+  Some_College TEXT,
+  Race_Asian TEXT,
+  Race_White TEXT,
+  Race_Two_Or_More TEXT,
   Race_Black INT,
-  Race_Hispanic INT,
+  Race_Hispanic TEXT,
   Race TEXT,
-  Education TEXT
+  Education TEXT,
+  rowNumber TEXT
 );
   
   
