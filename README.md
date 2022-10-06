@@ -50,19 +50,6 @@ Columns:
 - Race_Black: boolean 1 for yes, 0 for no. 
 - Race_Hispanic: boolean 1 for yes, 0 for no.
 
-There are 12 columns in the data:
-- **Job_title**: The title of the job which you are applying to.
-- **Company**: Company name.
-- **State/City**: State/city in which the company's job posting is listed.
-- **Min_Salary**: Minimum yearly salary in USD.
-- **Max_Salary**: Maximum yearly salary in USD.
-- **Job_Desc**: The job description which included skills, requirements, etc
-- **Industry**: The industry in which the company works.
-- **Date_posted**: The date on which the job was posted on glassdoor.com.
-- **Valid_until**: The last date of applying to the job.
-- **Job_Type**: Type of job (full-time, part-time, etc).
-- **Rating**: Rating of the company.
-
 ### Technologies Used
 #### Data Cleaning and Analysis
 Pandas will be used to clean the data and perform an exploratory analysis. Further analysis will be completed using other native Python tools. 
