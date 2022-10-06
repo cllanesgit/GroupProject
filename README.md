@@ -50,12 +50,6 @@ Columns:
 - Race_Black: boolean 1 for yes, 0 for no. 
 - Race_Hispanic: boolean 1 for yes, 0 for no.
 
-This dataset consists mainly of 4 .csv files:  
-1. **DataJobNY.csv**: New York Job postings.
-2. **DataJobSF.csv**: San Francisco Job postings.
-3. **DataJobTX.csv**: Texas Job postings.
-4. **DataJobWA.csv**: Washington State Job postings.
-
 There are 12 columns in the data:
 - **Job_title**: The title of the job which you are applying to.
 - **Company**: Company name.
