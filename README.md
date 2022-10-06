@@ -17,9 +17,6 @@ Moreover, this tool could also:
 - Aide those who are thinking about joining the Data Science field by shinning a light into the potential and expected salaries for entry-level jobs.
 - Understand salary expectation differences based on different factors including: location, company size, skill set, etc.
 
-For more information, please view our slide presentation:
-https://docs.google.com/presentation/d/1o7syC-JQvpaDmpmmhXB38SU9FxZwpta29gZYVwcWoh4/edit?usp=sharing
-
 ### Data Source
 The data used in our project is collected from Kaggle [https://www.kaggle.com/datasets/jackogozaly/data-science-and-stem-salaries?resource=download]. The Kaggle data itself, consists of 62,00 salary records from top companies. This data was scraped off levels.fyi.
 This dataset consists of useful information such as education level. compensation (comprised of base salary, bonus, stock grants), race and more. It contains information from the US and other countries. The cleaning process included removing columns that are not necessary for our analysis as well as removing the lines that include data not from the US.
