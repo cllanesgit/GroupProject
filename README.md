@@ -95,7 +95,7 @@ SciKitLearn will be the ML library we will be using for classification, regressi
 As an interactive dashboard, we intend to use Tableau to visualize our results.
 
 ### Presentation 
-The presentation of the project may be viewed [_HERE_](https://docs.google.com/presentation/d/1o7syC-JQvpaDmpmmhXB38SU9FxZwpta29gZYVwcWoh4/edit?usp=sharing).
+The presentation of the project (Goolge Slides) may be viewed [_HERE_](https://docs.google.com/presentation/d/1o7syC-JQvpaDmpmmhXB38SU9FxZwpta29gZYVwcWoh4/edit?usp=sharing).
 
 ### Dashboard
 - Use of Tableau charts to represent data.
