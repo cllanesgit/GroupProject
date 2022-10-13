@@ -54,7 +54,7 @@ This columns we divided into two different data sets: salary_data.csv and partic
 
 ## Data Cleanup
 
-# Cleaning Salary_Data
+### Cleaning Salary_Data
 
 During the cleanup of the data we were able to load first the salary_data.csv file obtained from kaggle and do an exploration of the information. Reviewed the columns included and discussed which columns were usefull for our project and which were not, as well as any other new columns/clean columns that we would need to generate for easier use of Dasboards and the Machine Learning Model.
 
@@ -66,13 +66,13 @@ We decided to remove the columns 'tag', 'otherdetails', 'cityid', 'dmaid' and dr
 
 ![...](/Resources/Images/clean_salary_datatypes.png)
 
-# Cleaning 'location' column
+#### Cleaning 'location' column
 
 Next step was to clean up the location column. From the original data set the 'location' column was in the format city,state,country,other and it included cities from different countries in the world. Since we are only looking to use cities from the USA we had to clean the column. To do that we started by using the .split method dividing all the items in the column by the comma "," divisor. This generated four different columns 'city', 'state', 'country', 'extra'. Then we got the unique values from the 'country' column and removed all that were not 'United States'. Did the same with the states, and then droped 'location', 'country', 'extra' columns and were left only with 'city' and 'state' columns. This reduced our data set to 52,746 values.
 
 ![...](/Resources/Images/clean_salary_data_country.png)
 
-# Cleaning 'company' column
+#### Cleaning 'company' column
 
 The company column includes 1000+ different companies but there are some that are written in different formats or names misspelled. First, to clean the format we changede them all to be in upper case. Also remove extra spaces at the beggining, end and between words. After this clean up we ended up with 927 unique companies. 
 
@@ -80,7 +80,7 @@ The company column includes 1000+ different companies but there are some that ar
 
 After cleanup, we exported the clean_salary_data_df to a new csv file called clean_salary_data.csv
 
-# Cleaning Participants_Data
+### Cleaning Participants_Data
 
 Doing the same import process as for salary_data as well as column review we actually didn't remove the columns that had  a lot of null values instead we changed the null values to say 'unknown' this way that value can actually be used for the Machine Learning Model. None of the other columns needed to be changed, so with that we completed the cleanup of Participants Data and exported to clean_participants_data.csv
 
