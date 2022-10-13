@@ -41,23 +41,23 @@ During the cleanup of the data we were able to load first the salary_data.csv fi
 
 First step was to view the data types and verify they were all in the format we needed, as well as counting all the rows of each column that were not null. By doing this we noticed that there were several null values as well as the timestamp column was not in datetime type. We proceeded to clean this buy first adding up all the null values on each column and review if we could replace with "unknown" value or remove that row completely.
 
-![...](/Resources/clean_salary_data.png)
+![...](/Resources/Images/clean_salary_data.png)
 
 We decided to remove the columns 'tag', 'otherdetails', 'cityid', 'dmaid' and drop the rest of the NA values. This way we ended up with a total of 62,518 values in the clean_salary_data_df. Afterward, we changed the type of the timestamp column to datetime using the .to_datetime module from pandas.
 
-![...](/Resources/clean_salary_datatypes.png)
+![...](/Resources/Images/clean_salary_datatypes.png)
 
 # Cleaning 'location' column
 
 Next step was to clean up the location column. From the original data set the 'location' column was in the format city,state,country,other and it included cities from different countries in the world. Since we are only looking to use cities from the USA we had to clean the column. To do that we started by using the .split method dividing all the items in the column by the comma "," divisor. This generated four different columns 'city', 'state', 'country', 'extra'. Then we got the unique values from the 'country' column and removed all that were not 'United States'. Did the same with the states, and then droped 'location', 'country', 'extra' columns and were left only with 'city' and 'state' columns. This reduced our data set to 52,746 values.
 
-![...](/Resources/clean_salary_data_country.png)
+![...](/Resources/Images/clean_salary_data_country.png)
 
 # Cleaning 'company' column
 
 The company column includes 1000+ different companies but there are some that are written in different formats or names misspelled. First, to clean the format we changede them all to be in upper case. Also remove extra spaces at the beggining, end and between words. After this clean up we ended up with 927 unique companies. 
 
-![...](/Resources/clean_salary_data_company.png)
+![...](/Resources/Images/clean_salary_data_company.png)
 
 After cleanup, we exported the clean_salary_data_df to a new csv file called clean_salary_data.csv
 
