@@ -75,24 +75,31 @@ The presentation of the project may be viewed [_HERE_](https://docs.google.com/p
 
 ## Preliminary Machine Learning Model
 ### Data Preprocessing
-For the initial data preprocessing, we selected one of the Excel CSVs from the dataset downloaded from Kaggle, specifically the file named 'Levels_Fyi_Salary_Data'.
-Preprocessing the data might look different for each model but in general will involve:
-- Checking and handling imbalanced datasets.
-- Performing initial exploratory analysis, including scatter plotting and correlation.
-- Removing non-beneficiary columns.
-- Preparing the data by working with any missing values, scaling the data, and converting categorical variables by using the one-hot encoding scheme.
+For the initial data preprocessing, we took the combined dataframe titled 'salary_df, and procedeed to complete the following:
+- Checked for imbalanced datasets. There were some imbalance (52,746 vs 62,645) between the two datasets that were merged, these imbalances were later handled on by removing rows and columns that were not beneficial for the analysis.
+- Created a dataframe with only columns that were relevant to the analysis. The final dataframe included the ''timestamp','company', 'title','totalyearlycompensation', 'yearsofexperience','basesalary','stockgrantvalue','bonus', 'gender', 'Race', and 'Education' columns.
+- Initial exploratory analysis by checking and handling missing values.
+- Performed a correlation analysis to look for columns with significant correlation and manage them in a way that would reduce changes of prediction leakage.
+- Developed scatter plots to analyze trends in the data and boxplot to remove outliers that would affect the performance of the machine learning model.
+- Lastly, we further removed other non-beneficiary columns prior to splitting the columns into target and independent variables.
 ### Model Target and Features
-Since we are simply sketching the model, we decided to use most of the columns in the dataset for the most complex models. In any model, the target feature is the 'totalyearlycompensation’ column while all other columns from the dataset are the independent features.
+-**Traget**: 'totalyearlycompensation' column.
+- **Features**: 'yearsofexperience','basesalary', 'yearsposted', 'title'. Since the 'title' column is categorial, we converted it by using the one-hot encoding scheme and adding dummy data.
 ### Splitting the dataset
-We will split the dataset into training and testing sets using the 80/20 Pareto principle resulting in a test size of 20%.
+We splitted the dataset into training and testing sets using the 80/20 Pareto principle resulting in a test size of 20%. Additionally, we scaled the data using the StandardScaler model.
 ### Supervised Machine Learning Model
-We will use a supervised machine learning model since we are looking to predict a value. There are different models we can use:
-#### Regression 
-- Apply a Linear Regression to predict salary.
-- We will also explore applying a Multilinear Regression Model to add other factors that might influence the salary prediction. 
-#### Classification / Ensemble Methods
-We could use Random Forest Regression to discover the connection between the target and independent variables to determine a continous value. This connection can then be used to predict salaries of data science jobs.
+We used a supervised machine learning model since we are looking to predict the salary value based on a combination of variables. For the analysis we utilized two models a MultiLinear Regression and a Random Forest Regression. Althought the Random Forest Regression is usually used for classification problems, we were able to use it for our salary prediction model to discover the connection between the target and independent variables to determine a continous value.
+
 ### Model Evaluation
-We will evaluate the models based on:
-- **Explained Variance Score**: Similar to the R^2 score, with the notable difference that it does not account for systematic offsets in the prediction.
-- **Model Score**: Returns the mean accuracy on the given test data.
+We evaluated the models based on:
+**Explained Variance Score**:
+- MuliLinear Regression: 60%
+- RandomForest: 73%
+
+**Model Score**:
+- MuliLinear Regression: 74%
+- RandomForest: 74%
+
+### Limitations of the Model and other considerations
+Becasue we were trying to predict the salary value for data science related positions, we were quite limited about the supervised machine leaning models we could used. In addition, because of high correlation between target and features, as well as the presence of multiple vategorical variables, we had to significantly tailor the data for the model to work.
+In hindsight, we believe that we could have taken a different approach or included additional analysis by leveraging unsupervised machine learning model to discover different patterns in that data that could have helped us predict if, for example, data science job salaries would increase from the current average. 
