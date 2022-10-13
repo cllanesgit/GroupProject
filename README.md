@@ -98,9 +98,12 @@ As an interactive dashboard, we intend to use Tableau to visualize our results.
 The presentation of the project may be viewed [_HERE_](https://docs.google.com/presentation/d/1o7syC-JQvpaDmpmmhXB38SU9FxZwpta29gZYVwcWoh4/edit?usp=sharing).
 
 ### Dashboard
-- Data represented in charts using Tableau.
-- A story is used to better showcase our data.
-- Interactables added to bring user-friendly GUI options.
+- Use of Tableau charts to represent data.
+- Interactable options to manipulate data such as filters actions, highlight actions, etc. 
+- There will be a Tableau story that will outline the purpose of the project through visualized data.
+- ML data will be provided as part of the dashboard presentation.
+
+Dashboard Link: https://public.tableau.com/views/SalaryPredictionToolCharts/Story1?:language=en-US&:display_count=n&:origin=viz_share_link
 
 ### Questions Data Set Will Answer
 1. Will salary for Data Science jobs continue to experience growth in the future?
