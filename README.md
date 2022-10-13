@@ -120,7 +120,7 @@ For the initial data preprocessing, we took the combined dataframe titled 'salar
 - Developed scatter plots to analyze trends in the data and boxplot to remove outliers that would affect the performance of the machine learning model.
 - Lastly, we further removed other non-beneficiary columns prior to splitting the columns into target and independent variables.
 ### Model Target and Features
--**Traget**: 'totalyearlycompensation' column.
+- **Traget**: 'totalyearlycompensation' column.
 - **Features**: 'yearsofexperience','basesalary', 'yearsposted', 'title'. Since the 'title' column is categorial, we converted it by using the one-hot encoding scheme and adding dummy data.
 ### Splitting the dataset
 We splitted the dataset into training and testing sets using the 80/20 Pareto principle resulting in a test size of 20%. Additionally, we scaled the data using the StandardScaler model.
