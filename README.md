@@ -129,6 +129,7 @@ We used a supervised machine learning model since we are looking to predict the 
 
 ### Model Evaluation
 We evaluated the models based on:
+
 **Explained Variance Score**:
 - MuliLinear Regression: 60%
 - RandomForest: 73%
