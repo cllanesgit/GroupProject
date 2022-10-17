@@ -1,8 +1,10 @@
 --Drop table salary_data
+--Drop table participants_data
 
 -- Create Salary Data table
 CREATE TABLE salary_data (
-  _c0 INT PRIMARY KEY NOT NULL,
+  responseid TEXT PRIMARY KEY NOT NULL,
+  _c0 TEXT,
   timestamp DATE,
   company TEXT,
   level TEXT,
@@ -12,21 +14,35 @@ CREATE TABLE salary_data (
   yearsatcompany FLOAT,
   basesalary INT,
   stockgrantvalue FLOAT,
-  gender TEXT,
-  rowNumber INT,
   bonus FLOAT,
-  Masters_Degree INT,
-  Bachelors_Degree INT,
-  Doctorate_Degree INT,
-  Highschool INT,
-  Some_College INT,
-  Race_Asian INT,
-  Race_White INT,
-  Race_Two_Or_More INT,
-  Race_Black INT,
-  Race_Hispanic INT,
-  Race TEXT,
-  Education TEXT,
+  rowNumber INT,
   city TEXT,
   state TEXT
 );
+
+
+CREATE TABLE participants_data (
+  responseid TEXT PRIMARY KEY NOT NULL,
+  _c0 TEXT,
+  timestamp TEXT,
+  gender TEXT,
+  otherdetails TEXT,
+  Masters_Degree TEXT,
+  Bachelors_Degree TEXT,
+  Doctorate_Degree TEXT,
+  Highschool TEXT,
+  Some_College TEXT,
+  Race_Asian TEXT,
+  Race_White TEXT,
+  Race_Two_Or_More TEXT,
+  Race_Black INT,
+  Race_Hispanic TEXT,
+  Race TEXT,
+  Education TEXT,
+  rowNumber TEXT
+);
+  
+  
+  
+  
+  
