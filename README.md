@@ -1,4 +1,7 @@
 # Salary Prediction Tool for U.S-Based Data Science Roles
+## Presentation 
+The presentation of the project (Goolge Slides) may be viewed [_HERE_](https://docs.google.com/presentation/d/1o7syC-JQvpaDmpmmhXB38SU9FxZwpta29gZYVwcWoh4/edit?usp=sharing).
+
 ## Project Overview
 
 ### Team
@@ -84,7 +87,7 @@ After cleanup, we exported the clean_salary_data_df to a new csv file called cle
 
 Doing the same import process as for salary_data as well as column review we actually didn't remove the columns that had  a lot of null values instead we changed the null values to say 'unknown' this way that value can actually be used for the Machine Learning Model. None of the other columns needed to be changed, so with that we completed the cleanup of Participants Data and exported to clean_participants_data.csv
 
-### Technologies Used
+## Technologies Used
 #### Data Cleaning and Analysis
 Pandas will be used to clean the data and perform an exploratory analysis. Further analysis will be completed using other native Python tools. 
 #### Database Storage
@@ -94,50 +97,77 @@ SciKitLearn will be the ML library we will be using for classification, regressi
 #### Dashboard
 As an interactive dashboard, we intend to use Tableau to visualize our results.
 
-### Presentation 
-The presentation of the project (Goolge Slides) may be viewed [_HERE_](https://docs.google.com/presentation/d/1o7syC-JQvpaDmpmmhXB38SU9FxZwpta29gZYVwcWoh4/edit?usp=sharing).
-
-### Dashboard
+## Dashboard
 - Use of Tableau charts to represent data.
 - Interactable options to manipulate data such as filters actions, highlight actions, etc. 
 - There will be a Tableau story that will outline the purpose of the project through visualized data.
 - ML data will be provided as part of the dashboard presentation.
 
-Dashboard Link: https://public.tableau.com/views/SalaryPredictionToolCharts/Story1?:language=en-US&:display_count=n&:origin=viz_share_link
+Dashboard Link: [_Click Here_](https://public.tableau.com/views/SalaryPredictionToolCharts/Story1?:language=en-US&:display_count=n&:origin=viz_share_link)
 
 ### Questions Data Set Will Answer
 1. Will salary for Data Science jobs continue to experience growth in the future?
 2. Based on the selected set of variables, what is the expected salary range?
 3. Determine salary trends based on specific factors.
 
-## Preliminary Machine Learning Model
+## Machine Learning Model
 ### Data Preprocessing
-For the initial data preprocessing, we took the combined dataframe titled 'salary_df, and procedeed to complete the following:
-- Checked for imbalanced datasets. There were some imbalance (52,746 vs 62,645) between the two datasets that were merged, these imbalances were later handled on by removing rows and columns that were not beneficial for the analysis.
-- Created a dataframe with only columns that were relevant to the analysis. The final dataframe included the ''timestamp','company', 'title','totalyearlycompensation', 'yearsofexperience','basesalary','stockgrantvalue','bonus', 'gender', 'Race', and 'Education' columns.
-- Initial exploratory analysis by checking and handling missing values.
-- Performed a correlation analysis to look for columns with significant correlation and manage them in a way that would reduce changes of prediction leakage.
-- Developed scatter plots to analyze trends in the data and boxplot to remove outliers that would affect the performance of the machine learning model.
-- Lastly, we further removed other non-beneficiary columns prior to splitting the columns into target and independent variables.
+For the initial data preprocessing, we took the cleaned version of the excel datasets from Kaggle and joined them into one dataframe titled 'salary_df.
+
+![Initial Data](https://github.com/cllanesgit/GroupProject/blob/main/Resources/Images/Initial%20Dataset.png)
+
+As seen above, the initial dataset contains several numerical and categorical columns, some of which are not beneficiary to the analysis. Therefore, we proceeded to complete the following:
+- Checked for imbalanced datasets. There was a minor difference between non-null value counts (52,756 vs. 52,746). No actions were taken since there is still some more data preprocessing to complete.
+- Created a data frame with only relevant columns to the analysis. The final dataframe included the ''timestamp','company', 'title','totalyearlycompensation', 'yearsofexperience','basesalary','stockgrantvalue','bonus', 'gender', 'Race', and 'Education' columns.
+- Removed rows where the value of base salary was equal to $0 since that is something unlikely to be true. Furthermore, we filtered the dataframe to only show information for jobs related to Data Scientist and Analyst, which were relevant to our analysis.
+- Developed scatter plots to analyze trends in the data and boxplots to remove outliers that would affect the machine learning model's performance. Below is an example of the boxplot analysis before and after removing the outliers.
+
+Before:
+
+![BeforeOutliers](https://github.com/cllanesgit/GroupProject/blob/main/Resources/Images/Outliers.png)
+
+After:
+
+![AfterOutliers](https://github.com/cllanesgit/GroupProject/blob/main/Resources/Images/Outliers%20Removed.png)
+
+- Performed a correlation analysis to look for columns with significant correlation and manage them in a way that would reduce the chances of prediction leakage.
+
+![Correlation](https://github.com/cllanesgit/GroupProject/blob/main/Resources/Images/Final%20Correlation%20Graph.png)
+
+- Lastly, we removed other non-beneficiary columns before splitting the columns into the target and independent variables.
+
+![Final Dataset](https://github.com/cllanesgit/GroupProject/blob/main/Resources/Images/Final%20Dataset.png)
+
 ### Model Target and Features
 - **Target**: 'totalyearlycompensation' column.
-- **Features**: 'yearsofexperience','basesalary', 'yearsposted', 'title'. Since the 'title' column is categorial, we converted it by using the one-hot encoding scheme and adding dummy data.
+- **Features**: 'yearsofexperience','base salary, 'yearsposted', 'title'. Since the 'title' column is categorial, we converted it using the one-hot encoding scheme and added dummy data.
 ### Splitting the dataset
-We splitted the dataset into training and testing sets using the 80/20 Pareto principle resulting in a test size of 20%. Additionally, we scaled the data using the StandardScaler model.
+We split the dataset into training and testing sets using the 80/20 Pareto principle resulting in a test size of 20%. Since we had a large dataset of over 2,700  for our model, we felt comfortable with this approach. Additionally, we scaled the data using the StandardScaler model.
 ### Supervised Machine Learning Model
-We used a supervised machine learning model since we are looking to predict the salary value based on a combination of variables. For the analysis we utilized two models a MultiLinear Regression and a Random Forest Regression. Althought the Random Forest Regression is usually used for classification problems, we were able to use it for our salary prediction model to discover the connection between the target and independent variables to determine a continous value.
+We used a supervised machine learning model since we were looking to predict the salary value based on a combination of variables. For the analysis, we utilized two models a MultiLinear Regression and a Random Forest Regression. Although the Random Forest is usually used for classification problems, we used it for our salary prediction model to discover the connection between the target and independent variables to determine a continuous value.
 
 ### Model Evaluation
-We evaluated the models based on:
+We evaluated the models based on the following:
 
 **Explained Variance Score**:
-- MuliLinear Regression: 60%
+- MultiLinear Regression: 60%
 - RandomForest: 73%
 
 **Model Score**:
-- MuliLinear Regression: 74%
+- MultiLinear Regression: 74%
 - RandomForest: 74%
 
+**Residual Plots**:
+-MultiLinear Regression
+
+![MultiLinear](https://github.com/cllanesgit/GroupProject/blob/main/Resources/Images/MLR_Residual.png)
+
+-RandomForest:
+
+![RandomForest](https://github.com/cllanesgit/GroupProject/blob/main/Resources/Images/RandomForest_Residual.png)
+
 ### Limitations of the Model and other considerations
-Becasue we were trying to predict the salary value for data science related positions, we were quite limited about the supervised machine leaning models we could used. In addition, because of high correlation between target and features, as well as the presence of multiple vategorical variables, we had to significantly tailor the data for the model to work.
-In hindsight, we believe that we could have taken a different approach or included additional analysis by leveraging unsupervised machine learning model to discover different patterns in that data that could have helped us predict if, for example, data science job salaries would increase from the current average. 
+Because we were trying to predict the salary value for data science-related positions, we were pretty limited in the supervised machine learning models we could use. In addition, because of the high correlation between the target and features and the presence of multiple categorical variables, we had to tailor the data for the model to work significantly.
+**Limitations and Benefits:**
+The Multiliner Regression was simple to set up and implement. However, this model is susceptible to overfitting. We used different reduction techniques to eliminate the chances of prediction leakage. However, we couldn't use more independent variables in our analysis.
+The Random Forest Regressor was flexible enough for this analysis and helped us avoid overfitting. The advantage is visible when comparing the score of both models. However, the model is susceptible to data trends. So it is unclear if the model's performance will decrease as we expand our initial dataset.
